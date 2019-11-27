@@ -7,8 +7,12 @@ Vue.use(Vuetify, {
     VSnackbar,
     VBtn,
     VIcon
-  }
+  },
 })
 Vue.use(VuetifyToast)
 
-export default new Vuetify()
+export default new Vuetify({
+  theme: {
+    dark: true,
+  },
+})

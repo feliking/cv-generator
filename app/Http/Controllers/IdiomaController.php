@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Hobby;
+use App\Idioma;
 use Illuminate\Http\Request;
 
-class HobbyController extends Controller
+class IdiomaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class HobbyController extends Controller
      */
     public function index()
     {
-        return Hobby::get();
+        return Idioma::get();
     }
 
     /**
@@ -25,30 +25,30 @@ class HobbyController extends Controller
      */
     public function store(Request $request)
     {
-        return Hobby::create($request->all());
+        return Idioma::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  \App\Idioma  $idioma
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return Hobby::findOrFail($id);
+        return Idioma::findOrFail($id);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hobby  $hobby
+     * @param  \App\Idioma  $idioma
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $data = Hobby::findOrFail($id);
+        $data = Idioma::findOrFail($id);
         $data->fill($request->all());
         $data->save();
         return $data;
@@ -57,12 +57,12 @@ class HobbyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  \App\Idioma  $idioma
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $data = Hobby::findOrFail($id);
+        $data = Idioma::findOrFail($id);
         $data->delete();
         return $data;
     }
@@ -76,6 +76,6 @@ class HobbyController extends Controller
     public function fill($request)
     {
         $request = json_decode($request, true);
-        return Hobby::where($request)->get();
+        return Idioma::where($request)->get();
     }
 }

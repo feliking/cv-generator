@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Hobby;
+use App\SoftwareManipulable;
 use Illuminate\Http\Request;
 
-class HobbyController extends Controller
+class SoftwareManipulableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class HobbyController extends Controller
      */
     public function index()
     {
-        return Hobby::get();
+        return SoftwareManipulable::get();
     }
 
     /**
@@ -25,30 +25,30 @@ class HobbyController extends Controller
      */
     public function store(Request $request)
     {
-        return Hobby::create($request->all());
+        return SoftwareManipulable::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  \App\SoftwareManipulable  $softwareManipulable
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return Hobby::findOrFail($id);
+        return SoftwareManipulable::findOrFail($id);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hobby  $hobby
+     * @param  \App\SoftwareManipulable  $softwareManipulable
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $data = Hobby::findOrFail($id);
+        $data = SoftwareManipulable::findOrFail($id);
         $data->fill($request->all());
         $data->save();
         return $data;
@@ -57,12 +57,12 @@ class HobbyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  \App\SoftwareManipulable  $softwareManipulable
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $data = Hobby::findOrFail($id);
+        $data = SoftwareManipulable::findOrFail($id);
         $data->delete();
         return $data;
     }
@@ -76,6 +76,6 @@ class HobbyController extends Controller
     public function fill($request)
     {
         $request = json_decode($request, true);
-        return Hobby::where($request)->get();
+        return SoftwareManipulable::where($request)->get();
     }
 }

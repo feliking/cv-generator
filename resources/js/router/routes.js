@@ -22,7 +22,8 @@ export default [
             { path: '', name: 'profile', component: require('$comp/admin/profile/Profile').default },
             { path: 'edit', name: 'profile-edit', component: require('$comp/admin/profile/edit/ProfileEdit').default }
           ]
-        }
+        },
+        { path: 'departamentos', name: 'departamento', component: require('$comp/admin/departamento/Index').default },
       ]
     },
   ]),

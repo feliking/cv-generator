@@ -35,7 +35,7 @@ class DummyClass extends Controller
      * @param  \DummyFullModelClass  $DummyModelVariable
      * @return \Illuminate\Http\Response
      */
-    public function show(DummyModelClass $DummyModelVariable)
+    public function show($id)
     {
         return DummyModelClass::findOrFail($id);
     }
@@ -47,7 +47,7 @@ class DummyClass extends Controller
      * @param  \DummyFullModelClass  $DummyModelVariable
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DummyModelClass $DummyModelVariable)
+    public function update(Request $request, $id)
     {
         $data = DummyModelClass::findOrFail($id);
         $data->fill($request->all());
@@ -61,7 +61,7 @@ class DummyClass extends Controller
      * @param  \DummyFullModelClass  $DummyModelVariable
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DummyModelClass $DummyModelVariable)
+    public function destroy($id)
     {
         $data = DummyModelClass::findOrFail($id);
         $data->delete();

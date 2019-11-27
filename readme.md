@@ -1,31 +1,22 @@
-# Laravel Vuetify SPA Starter
-Starter SPA built with Laravel 6.0, JWT Auth, Vue 2, Vue Router 3, Vuex 3, Axios, Vuetify 2
+# Generador de curriculums
+Esta aplicación esta diseñada para generar curriculums con diseños impresionantes para impresión y dígital, espero la disfruten tanto como yo cuando lo creé 
 
-## Included
-* [Laravel 6.0](https://laravel.com/docs/6.0)
-* [Vue 2](https://vuejs.org)
-* [Vue Router 3](http://router.vuejs.org)
-* [Vuex 3](http://vuex.vuejs.org)
-* [Axios](https://github.com/mzabriskie/axios)
-* [Authentication with JWT Token](https://github.com/tymondesigns/jwt-auth)
-* [Vuetify](https://vuetifyjs.com/en/getting-started/quick-start)
+## Instalación:
+* Clonar el repositorio
+* Copiar y renombra el archivo `.env.example` to `.env`
+* Configurar el archivo `.env` con la conexión de la base de datos y nombre del aplicativo
+* Crear las carpetas `storage/framework/cache`, `storage/framework/sessions`, `storage/framework/views` o corre el siguiente comando en linux `mkdir -p storage/framework/{sessions,views,cache}`
+* Ejecuta en la consola o terminal `composer install`
+* Ejecuta en la consola o terminal `php artisan key:generate`
+* Ejecuta en la consola o terminal `php artisan jwt:secret`
+* Ejecuta en la consola o terminal `php artisan migrate`
+* Ejecuta en la consola o terminal `npm install`
 
-## Installation:
-* Clone the repo
-* Copy `.env.example` to `.env`
-* Configure `.env`
-* Run `composer install`
-* Run `php artisan key:generate`
-* Run `php artisan jwt:secret`
-* Run `php artisan migrate`
-* Run `npm install`
-* Make sure `storage/framework/cache`, `storage/framework/sessions`, `storage/framework/views` directories exist. Run `mkdir -p storage/framework/{sessions,views,cache}`
-
-## Usage
-* Run `npm run watch` for live reloading using BrowserSync
-* Run `npm run hot` for hot reloading
-* Run `npm run prod` for production buid
+## Uso
+* Ejecuta en la consola o terminal `npm run watch` para compilar los nuevos cambios
+* Ejecuta en la consola o terminal `npm run hot` para recarga continua
+* Ejecuta en la consola o terminal `npm run prod` para producción
 
 ## Bonus
-* Lightweight [Vuetify Toast Snackbar](https://github.com/eolant/vuetify-toast-snackbar)
-* Checkout this [Confirm Dialog Component](https://gist.github.com/eolant/ba0f8a5c9135d1a146e1db575276177d) that you can add and extend in your application
+* Se agregó el comando "rest:model" para crear servicios con un solo comando(ej: php artisan rest:model nombre_modelo -mc) crea toda la estructura desde el modelo controlador y migración con servicios RestFull implementados
+* Control de acciones incluído para todos los cambios dentro del sistema

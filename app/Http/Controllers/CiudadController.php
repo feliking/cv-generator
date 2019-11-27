@@ -34,7 +34,7 @@ class CiudadController extends Controller
      * @param  \App\Ciudad  $ciudad
      * @return \Illuminate\Http\Response
      */
-    public function show(Ciudad $ciudad)
+    public function show($id)
     {
         return Ciudad::findOrFail($id);
     }
@@ -46,7 +46,7 @@ class CiudadController extends Controller
      * @param  \App\Ciudad  $ciudad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ciudad $ciudad)
+    public function update(Request $request, $id)
     {
         $data = Ciudad::findOrFail($id);
         $data->fill($request->all());
@@ -60,7 +60,7 @@ class CiudadController extends Controller
      * @param  \App\Ciudad  $ciudad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ciudad $ciudad)
+    public function destroy($id)
     {
         $data = Ciudad::findOrFail($id);
         $data->delete();

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Hobby;
+use App\ReferenciaLaboral;
 use Illuminate\Http\Request;
 
-class HobbyController extends Controller
+class ReferenciaLaboralController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class HobbyController extends Controller
      */
     public function index()
     {
-        return Hobby::get();
+        return ReferenciaLaboral::get();
     }
 
     /**
@@ -25,30 +25,30 @@ class HobbyController extends Controller
      */
     public function store(Request $request)
     {
-        return Hobby::create($request->all());
+        return ReferenciaLaboral::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  \App\ReferenciaLaboral  $referenciaLaboral
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return Hobby::findOrFail($id);
+        return ReferenciaLaboral::findOrFail($id);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hobby  $hobby
+     * @param  \App\ReferenciaLaboral  $referenciaLaboral
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $data = Hobby::findOrFail($id);
+        $data = ReferenciaLaboral::findOrFail($id);
         $data->fill($request->all());
         $data->save();
         return $data;
@@ -57,12 +57,12 @@ class HobbyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  \App\ReferenciaLaboral  $referenciaLaboral
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $data = Hobby::findOrFail($id);
+        $data = ReferenciaLaboral::findOrFail($id);
         $data->delete();
         return $data;
     }
@@ -76,6 +76,6 @@ class HobbyController extends Controller
     public function fill($request)
     {
         $request = json_decode($request, true);
-        return Hobby::where($request)->get();
+        return ReferenciaLaboral::where($request)->get();
     }
 }

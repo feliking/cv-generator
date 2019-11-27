@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer fixed app :permanent="$vuetify.breakpoint.mdAndUp" light :mini-variant.sync="$vuetify.breakpoint.mdAndUp && mini" :clipped="$vuetify.breakpoint.mdAndUp" :value="mini" :width="300">
+  <v-navigation-drawer fixed app :permanent="$vuetify.breakpoint.mdAndUp" :mini-variant.sync="$vuetify.breakpoint.mdAndUp && mini" :clipped="$vuetify.breakpoint.mdAndUp" :value="mini" :width="300">
     <v-list class="py-0">
       <v-list-item>
         <v-list-item-icon v-show="$vuetify.breakpoint.mdAndUp && mini">
@@ -120,6 +120,9 @@ export default {
       this.items = [
         [
           { title: 'Profile', icon: 'person', to: {name: 'profile'}, exact: false }
+        ],
+        [
+          { title: 'Departamentos', icon: 'map', to: {name: 'departamento'}, exact: false }
         ],
         [
           { title: 'Logout', icon: 'power_settings_new', action: this.logout }

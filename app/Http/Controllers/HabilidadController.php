@@ -34,7 +34,7 @@ class HabilidadController extends Controller
      * @param  \App\Habilidad  $habilidad
      * @return \Illuminate\Http\Response
      */
-    public function show(Habilidad $habilidad)
+    public function show($id)
     {
         return Habilidad::findOrFail($id);
     }
@@ -46,7 +46,7 @@ class HabilidadController extends Controller
      * @param  \App\Habilidad  $habilidad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Habilidad $habilidad)
+    public function update(Request $request, $id)
     {
         $data = Habilidad::findOrFail($id);
         $data->fill($request->all());
@@ -60,7 +60,7 @@ class HabilidadController extends Controller
      * @param  \App\Habilidad  $habilidad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Habilidad $habilidad)
+    public function destroy($id)
     {
         $data = Habilidad::findOrFail($id);
         $data->delete();
