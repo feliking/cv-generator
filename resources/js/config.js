@@ -66,5 +66,12 @@ export const api = Object.assign(new URL(apiUrl), {
 
   profile: {
     url: 'profile'
-  }
+  },
+
+  company: {
+    url: 'company',
+    upd: 'upd/',
+    upload: 'upload',
+    drop: 'drop'
+  },
 })

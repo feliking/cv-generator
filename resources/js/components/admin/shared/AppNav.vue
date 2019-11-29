@@ -119,13 +119,16 @@ export default {
     navigation() {
       this.items = [
         [
-          { title: 'Profile', icon: 'person', to: {name: 'profile'}, exact: false }
+          { title: 'Perfil', icon: 'person', to: {name: 'profile'}, exact: false }
+        ],
+        [
+          { title: 'Personas', icon: 'person', to: {name: 'persona'}, exact: false }
         ],
         [
           { title: 'Departamentos', icon: 'map', to: {name: 'departamento'}, exact: false }
         ],
         [
-          { title: 'Logout', icon: 'power_settings_new', action: this.logout }
+          { title: 'Salir', icon: 'power_settings_new', action: this.logout }
         ]
       ]
     }
